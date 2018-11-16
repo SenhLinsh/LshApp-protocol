@@ -1,5 +1,6 @@
 package com.linsh.protocol;
 
+import com.linsh.protocol.activity.ActivityManager;
 import com.linsh.protocol.db.DbManager;
 import com.linsh.protocol.file.FileManager;
 import com.linsh.protocol.http.HttpManager;
@@ -7,6 +8,7 @@ import com.linsh.protocol.image.ImageManager;
 import com.linsh.protocol.log.LogManager;
 import com.linsh.protocol.thread.ThreadManager;
 import com.linsh.protocol.ui.UIManager;
+import com.linsh.protocol.value.ValueManager;
 
 /**
  * <pre>
@@ -17,6 +19,8 @@ import com.linsh.protocol.ui.UIManager;
  * </pre>
  */
 public interface ManagerFactory {
+
+    ActivityManager activity();
 
     DbManager db();
 
@@ -45,4 +49,6 @@ public interface ManagerFactory {
     UIManager ui();
 
     UIManager ui(Config config);
+
+    ValueManager value();
 }
