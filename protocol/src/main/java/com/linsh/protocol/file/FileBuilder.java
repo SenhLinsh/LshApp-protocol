@@ -12,7 +12,7 @@ import java.io.File;
  *    desc   :
  * </pre>
  */
-interface FileBuilder {
+public interface FileBuilder {
 
     FileBuilder parent(String name);
 

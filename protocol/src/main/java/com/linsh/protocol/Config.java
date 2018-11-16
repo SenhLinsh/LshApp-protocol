@@ -20,10 +20,11 @@ public interface Config {
     String IMAGE_INT_ERROR = "image_error";
     // Log
     String LOG_STRING_CACHE_DIR = "log_cache_dir";
+    String LOG_BOOLEAN_TOGGLE = "log_toggle";
 
     Config put(String key, Object value);
 
-    Object get(String key);
+    <T> T get(String key);
 
     <T> T getOrDefault(String key, T defaultValue);
 

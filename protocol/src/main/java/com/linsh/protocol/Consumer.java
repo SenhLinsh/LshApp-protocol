@@ -10,5 +10,5 @@ package com.linsh.protocol;
  */
 public interface Consumer<T> {
 
-    void accept(T t);
+    void accept(T t) throws Exception;
 }
