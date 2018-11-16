@@ -1,12 +1,12 @@
 package com.linsh.protocol.file;
 
-import com.linsh.protocol.Callback;
+import android.graphics.Bitmap;
+
 import com.linsh.protocol.Consumer;
+import com.linsh.protocol.TaskHolder;
 
 import java.io.BufferedReader;
 import java.util.List;
-
-import io.reactivex.Flowable;
 
 /**
  * <pre>
@@ -18,25 +18,17 @@ import io.reactivex.Flowable;
  */
 public interface FileReader {
 
-    Flowable<String> read();
-
-    Flowable<List<String>> readLines();
-
-    <T> Flowable<T> readJson(Class<T> classOfT);
-
-    void read(Consumer<BufferedReader> callable);
-
-    void read(Callback<String> callback);
-
-    <T> void readLines(Callback<List<T>> callback);
-
-    <T> void readJson(Callback<T> callback);
-
-    String readBlocked();
-
-    String readLinesBlocked();
-
-    <T> T readJsonBlocked(Class<T> classOfT);
+    void reader(Consumer<BufferedReader> callable);
 
     BufferedReader reader();
+
+    TaskHolder<String> read();
+
+    TaskHolder<List<String>> readLines();
+
+    <T> TaskHolder<T> readJson(Class<T> classOfT);
+
+    TaskHolder<Bitmap> readBitmap();
+
+    TaskHolder<byte[]> readBytes();
 }

@@ -1,10 +1,12 @@
 package com.linsh.protocol.file;
 
-import com.linsh.protocol.Callback;
+import android.graphics.Bitmap;
+
 import com.linsh.protocol.Consumer;
+import com.linsh.protocol.TaskHolder;
 
 import java.io.BufferedWriter;
-import java.io.File;
+import java.io.OutputStream;
 import java.util.List;
 
 /**
@@ -19,7 +21,7 @@ public interface FileWriter {
 
     BufferedWriter writer();
 
-    FileWriter write(Consumer<BufferedWriter> callable);
+    void writer(Consumer<BufferedWriter> callable);
 
     FileWriter write(String content);
 
@@ -33,5 +35,32 @@ public interface FileWriter {
 
     FileWriter writeLines(int lines);
 
-    FileWriter callback(Callback<File> callback);
+    FileWriter write(Bitmap bitmap);
+
+    FileWriter write(byte[] bytes);
+
+    FileWriter write(OutputStream stream);
+
+    Task task();
+
+    interface Task extends TaskHolder<Boolean> {
+
+        Task write(String content);
+
+        Task write(String content, boolean append);
+
+        Task write(List<String> content);
+
+        Task write(List<String> content, boolean append);
+
+        Task writeLine();
+
+        Task writeLines(int lines);
+
+        Task write(Bitmap bitmap);
+
+        Task write(byte[] bytes);
+
+        Task write(OutputStream stream);
+    }
 }

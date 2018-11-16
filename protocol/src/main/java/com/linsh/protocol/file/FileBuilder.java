@@ -22,7 +22,7 @@ interface FileBuilder {
 
     File file();
 
-    FileWriter read();
+    FileReader read();
 
     FileWriter write();
 
