@@ -1,6 +1,6 @@
 package com.linsh.protocol;
 
-import com.linsh.protocol.db.DBManager;
+import com.linsh.protocol.db.DbManager;
 import com.linsh.protocol.file.FileManager;
 import com.linsh.protocol.http.HttpManager;
 import com.linsh.protocol.image.ImageManager;
@@ -18,9 +18,9 @@ import com.linsh.protocol.ui.UIManager;
  */
 public interface ManagerFactory {
 
-    DBManager db();
+    DbManager db();
 
-    DBManager db(Config config);
+    DbManager db(Config config);
 
     FileManager file();
 

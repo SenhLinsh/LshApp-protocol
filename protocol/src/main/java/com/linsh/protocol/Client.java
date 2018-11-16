@@ -1,6 +1,6 @@
 package com.linsh.protocol;
 
-import com.linsh.protocol.db.DBManager;
+import com.linsh.protocol.db.DbManager;
 import com.linsh.protocol.file.FileManager;
 import com.linsh.protocol.http.HttpManager;
 import com.linsh.protocol.image.ImageManager;
@@ -40,11 +40,11 @@ public class Client {
         Client.factory = factory;
     }
 
-    public static DBManager db() {
+    public static DbManager db() {
         return factory.db();
     }
 
-    public static DBManager db(Config config) {
+    public static DbManager db(Config config) {
         return factory.db(config);
     }
 
