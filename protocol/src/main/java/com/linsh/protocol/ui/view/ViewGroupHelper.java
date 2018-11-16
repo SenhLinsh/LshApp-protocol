@@ -8,6 +8,6 @@ package com.linsh.protocol.ui.view;
  *    desc   :
  * </pre>
  */
-public interface ViewGroupHelper extends ViewGroupProxy {
+public interface ViewGroupHelper extends ViewHelper, ViewGroupProxy {
 
 }

@@ -10,5 +10,11 @@ package com.linsh.protocol.ui.widget;
  */
 public interface ToolbarHelper {
 
+    ToolbarHelper setBackgroundColor(int color);
+
     ToolbarHelper setTitle(CharSequence title);
+
+    ToolbarHelper setSubtitle(CharSequence subtitle);
+
+    ToolbarHelper setMenu(MenuHelper helper);
 }

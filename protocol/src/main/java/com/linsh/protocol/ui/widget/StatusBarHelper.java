@@ -9,4 +9,8 @@ package com.linsh.protocol.ui.widget;
  * </pre>
  */
 public interface StatusBarHelper {
+
+    void setColor(int color);
+
+    void setImmersive();
 }

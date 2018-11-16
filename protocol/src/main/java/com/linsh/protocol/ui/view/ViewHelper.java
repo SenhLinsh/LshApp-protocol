@@ -1,6 +1,6 @@
 package com.linsh.protocol.ui.view;
 
-import com.linsh.protocol.value.Values;
+import com.linsh.protocol.value.Types;
 
 /**
  * <pre>
@@ -10,9 +10,13 @@ import com.linsh.protocol.value.Values;
  *    desc   :
  * </pre>
  */
-public interface ViewHelper extends ViewProxy<ViewHelper> {
+public interface ViewHelper extends ViewProxy {
 
-    ViewHelper setStyle(Values values);
+    void setValues(Types types);
 
-    ViewGroupHelper asViewGroup();
+    void setWidth(int width);
+
+    void setHeight(int height);
+
+    void setSize(int width, int height);
 }

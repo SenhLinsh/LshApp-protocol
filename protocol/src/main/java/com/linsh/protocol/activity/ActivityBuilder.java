@@ -23,8 +23,6 @@ public interface ActivityBuilder {
 
     ActivityBuilder targetInPath(String path);
 
-    ActivityBuilder emptyTarget();
-
     ActivityBuilder putExtra(String... values);
 
     ActivityBuilder putExtra(int... values);

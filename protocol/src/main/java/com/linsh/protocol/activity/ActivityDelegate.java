@@ -10,9 +10,9 @@ package com.linsh.protocol.activity;
  */
 public interface ActivityDelegate {
 
-    ActivityBuilder subscribe(Class<? extends ActivitySubscribe> subscriber);
+    ActivityDelegate subscribe(Class<? extends ActivitySubscribe> subscriber);
 
-    ActivityBuilder subscribe(ActivitySubscribe subscriber);
+    ActivityDelegate subscribe(ActivitySubscribe subscriber);
 
     <T extends ActivitySubscribe> T use(Class<T> subscriber);
 

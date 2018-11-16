@@ -10,7 +10,7 @@ package com.linsh.protocol.value;
  */
 public interface ValueManager {
 
-    ValueBuilder build();
+    ValueBuilder values();
 
     ColorCreator color();
 

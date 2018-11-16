@@ -8,15 +8,21 @@ package com.linsh.protocol.value;
  *    desc   :
  * </pre>
  */
-public interface Values {
-
-    int color();
+public interface Types {
 
     int width();
 
     int height();
 
-    int size();
+    int margin();
 
-    int id();
+    int padding();
+
+    int textSize();
+
+    int color();
+
+    int bgColor();
+
+    int textColor();
 }

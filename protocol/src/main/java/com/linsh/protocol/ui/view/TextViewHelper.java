@@ -8,7 +8,5 @@ package com.linsh.protocol.ui.view;
  *    desc   :
  * </pre>
  */
-public interface RecyclerViewHelper extends ViewGroupHelper, RecyclerViewProxy {
-
-
+public interface TextViewHelper extends TextViewProxy {
 }

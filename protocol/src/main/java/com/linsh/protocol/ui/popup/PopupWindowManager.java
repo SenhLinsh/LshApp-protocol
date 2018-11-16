@@ -1,5 +1,11 @@
 package com.linsh.protocol.ui.popup;
 
+import android.view.View;
+import android.widget.PopupWindow;
+
+import com.linsh.protocol.ui.view.ViewHelper;
+import com.linsh.protocol.ui.window.WindowViewHelper;
+
 /**
  * <pre>
  *    author : Senh Linsh
@@ -10,4 +16,25 @@ package com.linsh.protocol.ui.popup;
  */
 public interface PopupWindowManager {
 
+    PopupWindow getWindow();
+
+    PopupWindowManager addView(int layout);
+
+    PopupWindowManager addView(View view);
+
+    PopupWindowManager addView(ViewHelper viewHelper);
+
+    PopupWindowManager addView(WindowViewHelper helper);
+
+    PopupWindowManager showAsDropDown(View anchor);
+
+    PopupWindowManager showAsDropDown(View anchor, int xoff, int yoff);
+
+    PopupWindowManager showAsDropDown(View anchor, int xoff, int yoff, int gravity);
+
+    PopupWindowManager showAtLocation(View anchor, int gravity);
+
+    PopupWindowManager showAtLocation(View anchor, int gravity, int xoff, int yoff);
+
+    PopupWindowManager setOnDismissListener(PopupWindow.OnDismissListener onDismissListener);
 }

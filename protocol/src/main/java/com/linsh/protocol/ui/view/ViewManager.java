@@ -3,7 +3,7 @@ package com.linsh.protocol.ui.view;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.linsh.protocol.value.Values;
+import com.linsh.protocol.value.Types;
 
 /**
  * <pre>
@@ -15,31 +15,31 @@ import com.linsh.protocol.value.Values;
  */
 public interface ViewManager {
 
-    void image();
+    ImageViewHelper image();
 
-    void image(Values values);
+    ImageViewHelper image(Types types);
 
-    void input();
+    EditTextHelper input();
 
-    void input(Values values);
+    EditTextHelper input(Types types);
 
-    void list();
+    TextViewHelper text();
 
-    void list(Values values);
+    TextViewHelper text(Types types);
 
-    void text();
+    ViewHelper view();
 
-    void text(Values values);
+    ViewHelper view(View view);
 
-    void view();
+    ViewHelper view(Types types);
 
-    void find(int id);
+    ViewHelper view(View view, Types types);
 
-    void layout(View view);
+    ViewHelper find(int id);
 
-    void layout(int layout);
+    ViewHelper inflate(int layout);
 
-    void layout(int layout, ViewGroup parent);
+    ViewHelper inflate(int layout, ViewGroup parent);
 
-    void layout(int layout, ViewGroup parent, boolean attach);
+    ViewHelper inflate(int layout, ViewGroup parent, boolean attach);
 }

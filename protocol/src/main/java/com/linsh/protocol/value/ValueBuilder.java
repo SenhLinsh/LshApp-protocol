@@ -26,11 +26,5 @@ public interface ValueBuilder {
 
     ValueBuilder status(UsageType type);
 
-    ValueBuilder color(int color);
-
-    ValueBuilder id(int id);
-
-    ValueBuilder createId();
-
-    Values build();
+    Types build();
 }

@@ -11,23 +11,23 @@ import android.view.View;
  *    desc   :
  * </pre>
  */
-public interface ViewProxy<T extends ViewProxy> {
+public interface ViewProxy {
 
     View getView();
 
-    T background(Drawable drawable);
+    void setBackground(Drawable drawable);
 
-    T backgroundColor(int color);
+    void setBackgroundColor(int color);
 
-    T backgroundRes(int resId);
+    void setBackgroundRes(int resId);
 
-    T visibility(int visibility);
+    void setVisibility(int visibility);
 
-    T enabled(boolean enabled);
+    void setEnabled(boolean enabled);
 
-    T clickable(boolean clickable);
+    void setClickable(boolean clickable);
 
-    T onClickListener(View.OnClickListener listener);
+    void setOnClickListener(View.OnClickListener listener);
 
-    T onTouchListener(View.OnTouchListener listener);
+    void setOnTouchListener(View.OnTouchListener listener);
 }
