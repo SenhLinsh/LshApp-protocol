@@ -15,11 +15,6 @@ import java.util.List;
  */
 public interface DbManager {
 
-    /**
-     * 管理配置数据
-     */
-    DbConfigManager config();
-
     <T> QueryBuilder<T> query(Class<T> clazz);
 
     <T> Task<List<T>> queryAll(Class<T> clazz);
