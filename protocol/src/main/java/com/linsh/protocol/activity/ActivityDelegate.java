@@ -14,11 +14,13 @@ public interface ActivityDelegate {
 
     ActivityDelegate subscribe(ActivitySubscribe subscriber);
 
-    ActivityDelegate remove(Class<? extends ActivitySubscribe> subscriber);
+    ActivityDelegate unsubscribe(Class<? extends ActivitySubscribe> subscriber);
 
-    ActivityDelegate remove(ActivitySubscribe subscriber);
+    ActivityDelegate unsubscribe(ActivitySubscribe subscriber);
 
-    <T extends ActivitySubscribe> T use(Class<T> subscriber);
+    <T extends ActivitySubscribe> T getSubscriber(Class<T> subscriber);
 
-    <T extends ActivitySubscribe> T use(T subscriber);
+    <T extends ActivitySubscribe> T useSubscriber(Class<T> subscriber);
+
+    <T extends ActivitySubscribe> T useSubscriber(T subscriber);
 }

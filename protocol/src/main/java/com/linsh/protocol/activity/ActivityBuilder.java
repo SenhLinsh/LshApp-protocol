@@ -41,6 +41,8 @@ public interface ActivityBuilder {
 
     ActivityBuilder putJsonExtra(Object... values);
 
+    ActivityBuilder putExtra(String key, Object value);
+
     ActivityBuilder setData(Uri data);
 
     ActivityBuilder setAction(String action);
@@ -63,7 +65,7 @@ public interface ActivityBuilder {
 
     void start(Activity activity);
 
-    void startForResult(Activity activity);
+    void startForResult(Activity activity, int requestCode);
 
-    void startForResult(ActivitySubscribe.OnActivityResult subscriber);
+    void startForResult(Activity activity, int requestCode, ActivitySubscribe.OnActivityResult subscriber);
 }
