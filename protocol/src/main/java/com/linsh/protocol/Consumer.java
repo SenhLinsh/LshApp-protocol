@@ -8,7 +8,8 @@ package com.linsh.protocol;
  *    desc   :
  * </pre>
  */
-public interface Consumer<T> {
+public interface Consumer<T> extends io.reactivex.functions.Consumer<T> {
 
+    @Override
     void accept(T t) throws Exception;
 }

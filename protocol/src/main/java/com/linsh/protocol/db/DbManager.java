@@ -1,7 +1,7 @@
 package com.linsh.protocol.db;
 
 import com.linsh.protocol.Result;
-import com.linsh.protocol.TaskHolder;
+import com.linsh.protocol.Task;
 
 import java.util.List;
 
@@ -22,21 +22,21 @@ public interface DbManager {
 
     <T> QueryBuilder<T> query(Class<T> clazz);
 
-    <T> TaskHolder<List<T>> queryAll(Class<T> clazz);
+    <T> Task<List<T>> queryAll(Class<T> clazz);
 
-    TaskHolder<Result> update(Object entity);
+    Task<Result> update(Object entity);
 
-    TaskHolder<Result> delete(Object entity);
+    Task<Result> delete(Object entity);
 
-    TaskHolder<Result> deleteAll(List<?> entity);
+    Task<Result> deleteAll(List<?> entity);
 
-    TaskHolder<Result> deleteAll(Class<?> clazz);
+    Task<Result> deleteAll(Class<?> clazz);
 
-    TaskHolder<Result> insert(Object entity);
+    Task<Result> insert(Object entity);
 
-    TaskHolder<Result> insert(List<Object> entity);
+    Task<Result> insert(List<Object> entity);
 
-    TaskHolder<Result> insertOrUpdate(Object entity);
+    Task<Result> insertOrUpdate(Object entity);
 
-    TaskHolder<Result> insertOrUpdate(List<Object> entity);
+    Task<Result> insertOrUpdate(List<Object> entity);
 }

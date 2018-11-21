@@ -3,7 +3,7 @@ package com.linsh.protocol.file;
 import android.graphics.Bitmap;
 
 import com.linsh.protocol.Consumer;
-import com.linsh.protocol.TaskHolder;
+import com.linsh.protocol.Task;
 
 import java.io.BufferedWriter;
 import java.io.InputStream;
@@ -41,26 +41,26 @@ public interface FileWriter {
 
     FileWriter write(InputStream stream);
 
-    Task task();
+    FileTask task();
 
-    interface Task extends TaskHolder<Boolean> {
+    interface FileTask extends Task<Boolean> {
 
-        Task write(String content);
+        FileTask write(String content);
 
-        Task write(String content, boolean append);
+        FileTask write(String content, boolean append);
 
-        Task write(List<String> contents);
+        FileTask write(List<String> contents);
 
-        Task write(List<String> contents, boolean append);
+        FileTask write(List<String> contents, boolean append);
 
-        Task writeLine();
+        FileTask writeLine();
 
-        Task writeLines(int lines);
+        FileTask writeLines(int lines);
 
-        Task write(Bitmap bitmap);
+        FileTask write(Bitmap bitmap);
 
-        Task write(byte[] bytes);
+        FileTask write(byte[] bytes);
 
-        Task write(InputStream stream);
+        FileTask write(InputStream stream);
     }
 }

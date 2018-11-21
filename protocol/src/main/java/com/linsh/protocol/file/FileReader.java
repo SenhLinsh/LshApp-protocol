@@ -3,7 +3,7 @@ package com.linsh.protocol.file;
 import android.graphics.Bitmap;
 
 import com.linsh.protocol.Consumer;
-import com.linsh.protocol.TaskHolder;
+import com.linsh.protocol.Task;
 
 import java.io.BufferedReader;
 import java.util.List;
@@ -22,13 +22,13 @@ public interface FileReader {
 
     BufferedReader reader();
 
-    TaskHolder<String> read();
+    Task<String> read();
 
-    TaskHolder<List<String>> readLines();
+    Task<List<String>> readLines();
 
-    <T> TaskHolder<T> readJson(Class<T> classOfT);
+    <T> Task<T> readJson(Class<T> classOfT);
 
-    TaskHolder<Bitmap> readBitmap();
+    Task<Bitmap> readBitmap();
 
-    TaskHolder<byte[]> readBytes();
+    Task<byte[]> readBytes();
 }

@@ -12,7 +12,7 @@ import io.reactivex.Flowable;
  *             用于将任务调度到指定的线程进行操作
  * </pre>
  */
-public interface TaskHolder<T> {
+public interface Task<T> {
 
     /**
      * 同步执行

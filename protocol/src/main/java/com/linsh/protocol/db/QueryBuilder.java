@@ -1,6 +1,6 @@
 package com.linsh.protocol.db;
 
-import com.linsh.protocol.TaskHolder;
+import com.linsh.protocol.Task;
 
 import java.util.List;
 
@@ -72,17 +72,17 @@ public interface QueryBuilder<T> {
 
     QueryBuilder endGroup();
 
-    TaskHolder<Long> count();
+    Task<Long> count();
 
-    <R extends Number> TaskHolder<R> max(String fieldName);
+    <R extends Number> Task<R> max(String fieldName);
 
-    <R extends Number> TaskHolder<R> min(String fieldName);
+    <R extends Number> Task<R> min(String fieldName);
 
-    <R extends Number> TaskHolder<R> sum(String fieldName);
+    <R extends Number> Task<R> sum(String fieldName);
 
-    TaskHolder<Double> average(String fieldName);
+    Task<Double> average(String fieldName);
 
-    TaskHolder<T> findFirst();
+    Task<T> findFirst();
 
-    TaskHolder<List<T>> findAll();
+    Task<List<T>> findAll();
 }

@@ -1,7 +1,8 @@
 package com.linsh.protocol.db;
 
 
-import com.linsh.protocol.TaskHolder;
+import com.linsh.protocol.Result;
+import com.linsh.protocol.Task;
 
 /**
  * <pre>
@@ -13,19 +14,19 @@ import com.linsh.protocol.TaskHolder;
  */
 public interface DbConfigManager {
 
-    TaskHolder<String> get(String key);
+    Task<String> get(String key);
 
-    <T> TaskHolder<T> getJson(Class<T> classOfJson);
+    <T> Task<T> getJson(Class<T> classOfJson);
 
-    <T> TaskHolder<T> getJson(String key, Class<T> classOfJson);
+    <T> Task<T> getJson(String key, Class<T> classOfJson);
 
-    TaskHolder<Boolean> put(String key, String value);
+    Task<Result> put(String key, String value);
 
-    <T> TaskHolder<Boolean> putJson(T json);
+    <T> Task<Result> putJson(T json);
 
-    <T> TaskHolder<Boolean> putJson(String key, T json);
+    <T> Task<Result> putJson(String key, T json);
 
-    TaskHolder<Boolean> remove(String key);
+    Task<Result> remove(String key);
 
-    TaskHolder<Boolean> remove(Class<?> key);
+    Task<Result> remove(Class<?> key);
 }
