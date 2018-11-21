@@ -15,7 +15,7 @@ import java.io.File;
  *    desc   :
  * </pre>
  */
-interface ImageLoader {
+public interface ImageLoader {
 
     ImageLoader image(String url);
 
@@ -42,8 +42,6 @@ interface ImageLoader {
     ImageLoader fallback(int resId);
 
     ImageLoader fallback(Drawable drawable);
-
-    ImageLoader scaleType(int scaleType);
 
     ImageLoader resize(int with, int height);
 
