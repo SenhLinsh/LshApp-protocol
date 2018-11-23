@@ -1,6 +1,13 @@
 package com.linsh.protocol;
 
 import com.linsh.protocol.activity.ActivityManager;
+import com.linsh.protocol.config.DbConfig;
+import com.linsh.protocol.config.FileConfig;
+import com.linsh.protocol.config.HttpConfig;
+import com.linsh.protocol.config.ImageConfig;
+import com.linsh.protocol.config.LogConfig;
+import com.linsh.protocol.config.ThreadConfig;
+import com.linsh.protocol.config.UIConfig;
 import com.linsh.protocol.db.DbManager;
 import com.linsh.protocol.file.FileManager;
 import com.linsh.protocol.http.HttpManager;
@@ -24,31 +31,31 @@ public interface ManagerFactory {
 
     DbManager db();
 
-    DbManager db(Config config);
+    DbManager db(DbConfig config);
 
     FileManager file();
 
-    FileManager file(Config config);
+    FileManager file(FileConfig config);
 
     HttpManager http();
 
-    HttpManager http(Config config);
+    HttpManager http(HttpConfig config);
 
     ImageManager image();
 
-    ImageManager image(Config config);
+    ImageManager image(ImageConfig config);
 
     LogManager log();
 
-    LogManager log(Config config);
+    LogManager log(LogConfig config);
 
     ThreadManager thread();
 
-    ThreadManager thread(Config config);
+    ThreadManager thread(ThreadConfig config);
 
     UIManager ui();
 
-    UIManager ui(Config config);
+    UIManager ui(UIConfig config);
 
     ValueManager value();
 }

@@ -1,6 +1,13 @@
 package com.linsh.protocol;
 
 import com.linsh.protocol.activity.ActivityManager;
+import com.linsh.protocol.config.DbConfig;
+import com.linsh.protocol.config.FileConfig;
+import com.linsh.protocol.config.HttpConfig;
+import com.linsh.protocol.config.ImageConfig;
+import com.linsh.protocol.config.LogConfig;
+import com.linsh.protocol.config.ThreadConfig;
+import com.linsh.protocol.config.UIConfig;
 import com.linsh.protocol.db.DbManager;
 import com.linsh.protocol.file.FileManager;
 import com.linsh.protocol.http.HttpManager;
@@ -37,9 +44,15 @@ import com.linsh.protocol.value.ValueManager;
 public class Client {
 
     private static ManagerFactory factory;
+    private static Config config;
 
-    static void init(ManagerFactory factory) {
+    static void init(ManagerFactory factory, Config config) {
         Client.factory = factory;
+        Client.config = config;
+    }
+
+    public static Config config() {
+        return config;
     }
 
     public static ActivityManager activity() {
@@ -50,7 +63,7 @@ public class Client {
         return factory.db();
     }
 
-    public static DbManager db(Config config) {
+    public static DbManager db(DbConfig config) {
         return factory.db(config);
     }
 
@@ -58,7 +71,7 @@ public class Client {
         return factory.file();
     }
 
-    public static FileManager file(Config config) {
+    public static FileManager file(FileConfig config) {
         return factory.file(config);
     }
 
@@ -66,7 +79,7 @@ public class Client {
         return factory.http();
     }
 
-    public static HttpManager http(Config config) {
+    public static HttpManager http(HttpConfig config) {
         return factory.http(config);
     }
 
@@ -74,7 +87,7 @@ public class Client {
         return factory.image();
     }
 
-    public static ImageManager image(Config config) {
+    public static ImageManager image(ImageConfig config) {
         return factory.image(config);
     }
 
@@ -82,7 +95,7 @@ public class Client {
         return factory.log();
     }
 
-    public static LogManager log(Config config) {
+    public static LogManager log(LogConfig config) {
         return factory.log(config);
     }
 
@@ -90,7 +103,7 @@ public class Client {
         return factory.thread();
     }
 
-    public static ThreadManager thread(Config config) {
+    public static ThreadManager thread(ThreadConfig config) {
         return factory.thread(config);
     }
 
@@ -98,7 +111,7 @@ public class Client {
         return factory.ui();
     }
 
-    public static UIManager ui(Config config) {
+    public static UIManager ui(UIConfig config) {
         return factory.ui(config);
     }
 

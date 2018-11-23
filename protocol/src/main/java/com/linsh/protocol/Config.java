@@ -1,5 +1,13 @@
 package com.linsh.protocol;
 
+import com.linsh.protocol.config.DbConfig;
+import com.linsh.protocol.config.FileConfig;
+import com.linsh.protocol.config.HttpConfig;
+import com.linsh.protocol.config.ImageConfig;
+import com.linsh.protocol.config.LogConfig;
+import com.linsh.protocol.config.ThreadConfig;
+import com.linsh.protocol.config.UIConfig;
+
 /**
  * <pre>
  *    author : Senh Linsh
@@ -8,44 +16,101 @@ package com.linsh.protocol;
  *    desc   :
  * </pre>
  */
-public interface Config {
-    // common
-    String COMMON_BOOLEAN_CACHED = "common_cached";
-    // File
-    String FILE_STRING_APP_DIR = "file_app_dir";
-    // Http
-    String HTTP_STRING_BASE_URL = "http_base_url";
-    // Image
-    String IMAGE_INT_PLACEHOLDER = "image_placeholder";
-    String IMAGE_INT_ERROR = "image_error";
-    // Log
-    String LOG_STRING_CACHE_DIR = "log_cache_dir";
-    String LOG_BOOLEAN_TOGGLE = "log_toggle";
+public class Config {
 
-    Config put(String key, Object value);
+    private final DbConfig db;
+    private final FileConfig file;
+    private final HttpConfig http;
+    private final ImageConfig image;
+    private final LogConfig log;
+    private final ThreadConfig thread;
+    private final UIConfig ui;
 
-    <T> T get(String key);
+    private Config(DbConfig db, FileConfig file, HttpConfig http, ImageConfig image, LogConfig log, ThreadConfig thread, UIConfig ui) {
+        this.db = db;
+        this.file = file;
+        this.http = http;
+        this.image = image;
+        this.log = log;
+        this.thread = thread;
+        this.ui = ui;
+    }
 
-    <T> T getOrDefault(String key, T defaultValue);
+    public DbConfig db() {
+        return db;
+    }
 
-    int getInt(String key);
+    public FileConfig file() {
+        return file;
+    }
 
-    long getLong(String key);
+    public HttpConfig http() {
+        return http;
+    }
 
-    String getString(String key);
+    public ImageConfig image() {
+        return image;
+    }
 
-    boolean getBoolean(String key);
+    public LogConfig log() {
+        return log;
+    }
 
-    float getFloat(String key);
+    public ThreadConfig thread() {
+        return thread;
+    }
 
-    double getDouble(String key);
+    public UIConfig ui() {
+        return ui;
+    }
 
-    char getChar(String key);
+    public static class Builder {
 
-    class Builder {
+        private DbConfig db;
+        private FileConfig file;
+        private HttpConfig http;
+        private ImageConfig image;
+        private LogConfig log;
+        private ThreadConfig thread;
+        private UIConfig ui;
 
-        public static Config create() {
-            return new ConfigImpl();
+        public Builder db(DbConfig db) {
+            this.db = db;
+            return this;
+        }
+
+        public Builder file(FileConfig file) {
+            this.file = file;
+            return this;
+        }
+
+        public Builder http(HttpConfig http) {
+            this.http = http;
+            return this;
+        }
+
+        public Builder image(ImageConfig image) {
+            this.image = image;
+            return this;
+        }
+
+        public Builder log(LogConfig log) {
+            this.log = log;
+            return this;
+        }
+
+        public Builder thread(ThreadConfig thread) {
+            this.thread = thread;
+            return this;
+        }
+
+        public Builder ui(UIConfig ui) {
+            this.ui = ui;
+            return this;
+        }
+
+        public Config build() {
+            return new Config(db, file, http, image, log, thread, ui);
         }
     }
 }
