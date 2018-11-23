@@ -74,11 +74,11 @@ public interface QueryBuilder<T> {
 
     Task<Long> count();
 
-    <R extends Number> Task<R> max(String fieldName);
+    Task<Number> max(String fieldName);
 
-    <R extends Number> Task<R> min(String fieldName);
+    Task<Number> min(String fieldName);
 
-    <R extends Number> Task<R> sum(String fieldName);
+    Task<Number> sum(String fieldName);
 
     Task<Double> average(String fieldName);
 

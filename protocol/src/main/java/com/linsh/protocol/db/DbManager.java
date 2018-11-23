@@ -23,15 +23,19 @@ public interface DbManager {
 
     Task<Result> delete(Object entity);
 
-    Task<Result> deleteAll(List<?> entity);
+    <T> Task<Result> deleteById(Class<T> clazz, Object value);
+
+    <T> Task<Result> deleteByKey(Class<T> clazz, String fieldName, Object value);
+
+    <T> Task<Result> deleteAll(List<T> entities);
 
     Task<Result> deleteAll(Class<?> clazz);
 
     Task<Result> insert(Object entity);
 
-    Task<Result> insert(List<Object> entity);
+    Task<Result> insert(List<?> entities);
 
     Task<Result> insertOrUpdate(Object entity);
 
-    Task<Result> insertOrUpdate(List<Object> entity);
+    Task<Result> insertOrUpdate(List<?> entities);
 }
