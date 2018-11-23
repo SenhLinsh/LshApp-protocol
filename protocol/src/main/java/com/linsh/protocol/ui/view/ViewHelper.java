@@ -12,7 +12,7 @@ import com.linsh.protocol.value.Types;
  */
 public interface ViewHelper extends ViewProxy {
 
-    void setValues(Types types);
+    void setTypes(Types types);
 
     void setWidth(int width);
 

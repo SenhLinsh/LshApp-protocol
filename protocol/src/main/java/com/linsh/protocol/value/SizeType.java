@@ -8,7 +8,7 @@ package com.linsh.protocol.value;
  *    desc   :
  * </pre>
  */
-enum SizeType {
+public enum SizeType {
 
     MATCH_PARENT, WRAP_CONTENT, FULL_SCREEN, HALF_SCREEN, THIRD_SCREEN, QUARTER_SCREEN,
 

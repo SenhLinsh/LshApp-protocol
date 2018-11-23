@@ -11,5 +11,8 @@ package com.linsh.protocol.value;
 public enum StatusType {
 
     DISABLED, SELECTED, PRESSED, CHECKED,
-    SUCCESS, WARNING, ERROR
+
+    SUCCESS, WARNING, ERROR,
+
+    VERTICAL, HORIZONTAL
 }
