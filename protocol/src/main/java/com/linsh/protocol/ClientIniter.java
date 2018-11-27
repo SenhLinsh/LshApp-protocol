@@ -10,7 +10,7 @@ package com.linsh.protocol;
  */
 public class ClientIniter {
 
-    public static void initClient(ManagerFactory factory) {
-        Client.init(factory);
+    public static void initClient(ManagerFactory factory, Config config) {
+        Client.init(factory, config);
     }
 }
