@@ -10,12 +10,12 @@ import android.widget.EditText;
  *    desc   :
  * </pre>
  */
-public interface EditTextProxy extends TextViewProxy {
+public interface EditTextProxy<T extends EditTextProxy, V extends EditText> extends TextViewProxy<T, V> {
 
     @Override
-    EditText getView();
+    V getView();
 
-    void setSelection(int index);
+    T setSelection(int index);
 
-    void setSelection(int start, int stop);
+    T setSelection(int start, int stop);
 }

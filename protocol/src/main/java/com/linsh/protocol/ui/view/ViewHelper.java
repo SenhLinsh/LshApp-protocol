@@ -1,5 +1,7 @@
 package com.linsh.protocol.ui.view;
 
+import android.view.View;
+
 import com.linsh.protocol.value.Types;
 
 /**
@@ -10,7 +12,7 @@ import com.linsh.protocol.value.Types;
  *    desc   :
  * </pre>
  */
-public interface ViewHelper extends ViewProxy {
+public interface ViewHelper<T extends ViewHelper, V extends View> extends ViewProxy<T, V> {
 
     void setTypes(Types types);
 

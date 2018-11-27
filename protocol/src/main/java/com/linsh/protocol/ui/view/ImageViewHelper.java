@@ -1,5 +1,7 @@
 package com.linsh.protocol.ui.view;
 
+import android.widget.ImageView;
+
 /**
  * <pre>
  *    author : Senh Linsh
@@ -8,6 +10,6 @@ package com.linsh.protocol.ui.view;
  *    desc   :
  * </pre>
  */
-public interface ImageViewHelper extends ViewHelper, ImageViewProxy {
+public interface ImageViewHelper<T extends ImageViewHelper, V extends ImageView> extends ViewHelper<T, V>, ImageViewProxy<T, V> {
 
 }

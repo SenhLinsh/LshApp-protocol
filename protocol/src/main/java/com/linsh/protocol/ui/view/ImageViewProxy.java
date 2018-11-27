@@ -12,14 +12,14 @@ import android.widget.ImageView;
  *    desc   :
  * </pre>
  */
-public interface ImageViewProxy extends ViewProxy {
+public interface ImageViewProxy<T extends ImageViewProxy, V extends ImageView> extends ViewProxy<T, V> {
 
     @Override
-    ImageView getView();
+    V getView();
 
-    void setImage(Bitmap bitmap);
+    T setImage(Bitmap bitmap);
 
-    void setImage(Drawable drawable);
+    T setImage(Drawable drawable);
 
-    void setImage(int resId);
+    T setImage(int resId);
 }

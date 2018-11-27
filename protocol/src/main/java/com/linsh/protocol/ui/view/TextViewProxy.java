@@ -11,34 +11,34 @@ import android.widget.TextView;
  *    desc   :
  * </pre>
  */
-public interface TextViewProxy extends ViewProxy {
+public interface TextViewProxy<T extends TextViewProxy, V extends TextView> extends ViewProxy<T, V> {
 
     @Override
-    TextView getView();
+    V getView();
 
-    void setText(CharSequence text);
+    T setText(CharSequence text);
 
-    void setText(int resId);
+    T setText(int resId);
 
-    void setTextColor(int color);
+    T setTextColor(int color);
 
-    void setTextSize(float size);
+    T setTextSize(float size);
 
-    void setTextSize(int unit, float size);
+    T setTextSize(int unit, float size);
 
-    void setHint(CharSequence text);
+    T setHint(CharSequence text);
 
-    void setHint(int resId);
+    T setHint(int resId);
 
-    void setHintTextColor(int color);
+    T setHintTextColor(int color);
 
-    void setLines(int lines);
+    T setLines(int lines);
 
-    void setLineSpacing(float add, float mult);
+    T setLineSpacing(float add, float mult);
 
-    void setMaxLines(int maxLines);
+    T setMaxLines(int maxLines);
 
-    void setMinLines(int minLines);
+    T setMinLines(int minLines);
 
-    void setEllipsize(TextUtils.TruncateAt where);
+    T setEllipsize(TextUtils.TruncateAt where);
 }

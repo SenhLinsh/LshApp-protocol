@@ -18,13 +18,13 @@ public interface PopupWindowManager {
 
     PopupWindow getWindow();
 
-    PopupWindowManager addView(int layout);
+    PopupWindowManager setView(int layout);
 
-    PopupWindowManager addView(View view);
+    PopupWindowManager setView(View view);
 
-    PopupWindowManager addView(ViewHelper viewHelper);
+    PopupWindowManager setView(ViewHelper viewHelper);
 
-    PopupWindowManager addView(WindowViewHelper helper);
+    PopupWindowManager setView(WindowViewHelper helper);
 
     PopupWindowManager showAsDropDown(View anchor);
 

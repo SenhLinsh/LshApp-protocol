@@ -29,11 +29,15 @@ public interface ViewManager {
 
     ViewHelper view();
 
-    ViewHelper view(View view);
+    <V extends View> ViewHelper<ViewHelper, V> view(V view);
 
     ViewHelper view(Types types);
 
-    ViewHelper view(View view, Types types);
+    <V extends View> ViewHelper<ViewHelper, V> view(V view, Types types);
+
+    <V extends ViewGroup> ViewGroupHelper<ViewGroupHelper, V> viewGroup(V viewGroup);
+
+    <V extends ViewGroup> ViewGroupHelper<ViewGroupHelper, V> viewGroup(V viewGroup, Types types);
 
     ViewHelper find(int id);
 

@@ -1,5 +1,7 @@
 package com.linsh.protocol.ui.view;
 
+import android.widget.TextView;
+
 /**
  * <pre>
  *    author : Senh Linsh
@@ -8,5 +10,5 @@ package com.linsh.protocol.ui.view;
  *    desc   :
  * </pre>
  */
-public interface TextViewHelper extends TextViewProxy {
+public interface TextViewHelper<T extends TextViewHelper, V extends TextView> extends ViewHelper<T, V>, TextViewProxy<T, V> {
 }

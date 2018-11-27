@@ -26,7 +26,7 @@ public interface UIManager {
 
     PopupWindowManager popup(Activity activity);
 
-    ToastManager toast(Activity activity);
+    ToastManager toast();
 
     ViewManager view(Activity activity);
 

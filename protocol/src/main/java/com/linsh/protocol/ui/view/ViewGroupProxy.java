@@ -13,26 +13,26 @@ import android.view.animation.LayoutAnimationController;
  *    desc   :
  * </pre>
  */
-public interface ViewGroupProxy extends ViewProxy {
+public interface ViewGroupProxy<T extends ViewGroupProxy, V extends ViewGroup> extends ViewProxy<T, V> {
 
     @Override
-    ViewGroup getView();
+    V getView();
 
-    void addView(View view);
+    T addView(View view);
 
-    void getChildAt(int index);
+    T getChildAt(int index);
 
-    void removeView(View view);
+    T removeView(View view);
 
-    void removeViewAt(int index);
+    T removeViewAt(int index);
 
-    void removeAllViews();
+    T removeAllViews();
 
-    void setClipToPadding(boolean clipToPadding);
+    T setClipToPadding(boolean clipToPadding);
 
-    void setClipChildren(boolean clipChildren);
+    T setClipChildren(boolean clipChildren);
 
-    void setLayoutAnimation(LayoutAnimationController controller);
+    T setLayoutAnimation(LayoutAnimationController controller);
 
-    void setLayoutAnimationListener(Animation.AnimationListener animationListener);
+    T setLayoutAnimationListener(Animation.AnimationListener animationListener);
 }

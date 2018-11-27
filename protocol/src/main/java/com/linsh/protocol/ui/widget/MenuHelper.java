@@ -2,6 +2,11 @@ package com.linsh.protocol.ui.widget;
 
 import android.view.MenuItem;
 
+import com.linsh.protocol.ui.OnClickListener;
+import com.linsh.protocol.ui.OnItemClickListener;
+
+import java.util.List;
+
 /**
  * <pre>
  *    author : Senh Linsh
@@ -12,9 +17,19 @@ import android.view.MenuItem;
  */
 public interface MenuHelper {
 
-    MenuItem addItem(CharSequence title);
+    MenuHelper addItem(CharSequence title);
 
-    MenuItem addItem(CharSequence title, int icon);
+    MenuHelper addItem(CharSequence title, OnClickListener<MenuItem> listener);
+
+    MenuHelper addItems(CharSequence[] titles);
+
+    MenuHelper addItems(CharSequence[] titles, OnItemClickListener<MenuItem> listener);
+
+    MenuHelper addItems(List<? extends CharSequence> titles);
+
+    MenuHelper addItems(List<? extends CharSequence> titles, OnItemClickListener<MenuItem> listener);
+
+    MenuHelper setOnMenuItemClickListener(OnItemClickListener<MenuItem> listener);
 
     ItemBuilder build();
 
@@ -23,6 +38,8 @@ public interface MenuHelper {
     interface ItemBuilder {
 
         ItemBuilder setGroupId(int id);
+
+        ItemBuilder setItemId(int id);
 
         ItemBuilder setOrder(int order);
 
@@ -36,6 +53,8 @@ public interface MenuHelper {
          *                   {@link MenuItem#SHOW_AS_ACTION_NEVER}.
          */
         ItemBuilder setShowAsAction(int actionEnum);
+
+        ItemBuilder setOnClickListener(OnClickListener<MenuItem> listener);
 
         MenuHelper add();
     }

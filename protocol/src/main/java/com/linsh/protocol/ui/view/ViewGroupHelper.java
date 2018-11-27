@@ -1,5 +1,7 @@
 package com.linsh.protocol.ui.view;
 
+import android.view.ViewGroup;
+
 /**
  * <pre>
  *    author : Senh Linsh
@@ -8,6 +10,6 @@ package com.linsh.protocol.ui.view;
  *    desc   :
  * </pre>
  */
-public interface ViewGroupHelper extends ViewHelper, ViewGroupProxy {
+public interface ViewGroupHelper<T extends ViewGroupHelper, V extends ViewGroup> extends ViewHelper<T, V>, ViewGroupProxy<T, V> {
 
 }

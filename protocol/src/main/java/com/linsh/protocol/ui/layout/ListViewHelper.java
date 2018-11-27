@@ -6,6 +6,8 @@ import com.linsh.protocol.value.Types;
 
 import java.util.List;
 
+import io.reactivex.functions.BiFunction;
+
 /**
  * <pre>
  *    author : Senh Linsh
@@ -24,25 +26,25 @@ public interface ListViewHelper<T> {
 
     T getSingleData();
 
-    ListViewHelper setData(List<T> data);
+    ListViewHelper<T> setData(List<T> data);
 
-    ListViewHelper setData(T[] data);
+    ListViewHelper<T> setData(T[] data);
 
-    ListViewHelper setSingleData(T data);
+    ListViewHelper<T> setSingleData(T data);
 
-    ListViewHelper setCounter(ItemCounter counter);
+    ListViewHelper<T> setCounter(ItemCounter counter);
 
-    <V extends ItemViewHelper<T>> ListViewHelper setItemView(ItemViewFactory<V> factory);
+    <V extends ItemViewHelper<T>> ListViewHelper<T> addItemView(ItemViewFactory<V> factory);
 
-    <V extends ItemViewHelper<T>> ListViewHelper setItemView(OnCreateItemViewListener<V> createListener);
+    <V extends ItemViewHelper<T>> ListViewHelper<T> addItemView(ItemViewFactory<V> factory, BiFunction<ListViewHelper<T>, Integer, Boolean> filter);
 
-    ListViewHelper setDivider(Types types);
+    ListViewHelper<T> setDivider(Types types);
 
-    <V extends ItemViewHelper<T>> ListViewHelper setDivider(V helper);
+    <V extends ItemViewHelper<T>> ListViewHelper<T> setDivider(V helper);
 
-    <V extends ItemViewHelper<T>> ListViewHelper addHeader(V helper);
+    <V extends ItemViewHelper<T>> ListViewHelper<T> addHeader(V helper);
 
-    <V extends ItemViewHelper<T>> ListViewHelper addFooter(V helper);
+    <V extends ItemViewHelper<T>> ListViewHelper<T> addFooter(V helper);
 
     void setOnItemClickListener(OnItemClickListener listener);
 

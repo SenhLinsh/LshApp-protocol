@@ -10,24 +10,24 @@ import android.support.v7.widget.RecyclerView;
  *    desc   :
  * </pre>
  */
-public interface RecyclerViewProxy extends ViewGroupProxy {
+public interface RecyclerViewProxy<T extends RecyclerViewProxy, V extends RecyclerView> extends ViewGroupProxy<T, V> {
 
     @Override
-    RecyclerView getView();
+    V getView();
 
     RecyclerView.Adapter getAdapter();
 
-    void setAdapter(RecyclerView.Adapter adapter);
+    T setAdapter(RecyclerView.Adapter adapter);
 
-    void setLayoutManager(RecyclerView.LayoutManager layoutManager);
+    T setLayoutManager(RecyclerView.LayoutManager layoutManager);
 
-    void addItemDecoration(RecyclerView.ItemDecoration decor);
+    T addItemDecoration(RecyclerView.ItemDecoration decor);
 
-    void addItemDecoration(RecyclerView.ItemDecoration decor, int index);
+    T addItemDecoration(RecyclerView.ItemDecoration decor, int index);
 
-    void addOnScrollListener(RecyclerView.OnScrollListener listener);
+    T addOnScrollListener(RecyclerView.OnScrollListener listener);
 
-    void addOnItemTouchListener(RecyclerView.OnItemTouchListener listener);
+    T addOnItemTouchListener(RecyclerView.OnItemTouchListener listener);
 
-    void setOnFlingListener(RecyclerView.OnFlingListener onFlingListener);
+    T setOnFlingListener(RecyclerView.OnFlingListener onFlingListener);
 }
