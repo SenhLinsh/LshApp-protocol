@@ -56,10 +56,20 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    debugImplementation 'com.android.support:appcompat-v7:27.1.1'
-    debugImplementation 'com.android.support:design:27.1.1'
 
-    debugImplementation 'io.reactivex.rxjava2:rxjava:2.2.0'
-    debugImplementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    if (isRunAlone.toBoolean()) {
+        implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+        implementation 'com.android.support:appcompat-v7:27.1.1'
+        implementation 'com.android.support:design:27.1.1'
+
+        implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+        implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    } else {
+        compileOnly 'com.android.support.constraint:constraint-layout:1.1.3'
+        compileOnly 'com.android.support:appcompat-v7:27.1.1'
+        compileOnly 'com.android.support:design:27.1.1'
+
+        compileOnly 'io.reactivex.rxjava2:rxjava:2.2.0'
+        compileOnly 'com.squareup.okhttp3:okhttp:3.11.0'
+    }
 }
