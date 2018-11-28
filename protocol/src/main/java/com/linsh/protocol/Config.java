@@ -7,6 +7,7 @@ import com.linsh.protocol.config.ImageConfig;
 import com.linsh.protocol.config.LogConfig;
 import com.linsh.protocol.config.ThreadConfig;
 import com.linsh.protocol.config.UIConfig;
+import com.linsh.protocol.config.ValueConfig;
 
 /**
  * <pre>
@@ -25,8 +26,11 @@ public class Config {
     private final LogConfig log;
     private final ThreadConfig thread;
     private final UIConfig ui;
+    private final ValueConfig value;
 
-    private Config(DbConfig db, FileConfig file, HttpConfig http, ImageConfig image, LogConfig log, ThreadConfig thread, UIConfig ui) {
+    private Config(DbConfig db, FileConfig file, HttpConfig http,
+                   ImageConfig image, LogConfig log, ThreadConfig thread,
+                   UIConfig ui, ValueConfig value) {
         this.db = db;
         this.file = file;
         this.http = http;
@@ -34,6 +38,7 @@ public class Config {
         this.log = log;
         this.thread = thread;
         this.ui = ui;
+        this.value = value;
     }
 
     public DbConfig db() {
@@ -64,6 +69,10 @@ public class Config {
         return ui;
     }
 
+    public ValueConfig value() {
+        return value;
+    }
+
     public static class Builder {
 
         private DbConfig db;
@@ -73,6 +82,7 @@ public class Config {
         private LogConfig log;
         private ThreadConfig thread;
         private UIConfig ui;
+        private ValueConfig value;
 
         public Builder db(DbConfig db) {
             this.db = db;
@@ -109,8 +119,13 @@ public class Config {
             return this;
         }
 
+        public Builder value(ValueConfig value) {
+            this.value = value;
+            return this;
+        }
+
         public Config build() {
-            return new Config(db, file, http, image, log, thread, ui);
+            return new Config(db, file, http, image, log, thread, ui, value);
         }
     }
 }
