@@ -23,4 +23,6 @@ public interface ActivityDelegate {
     <T extends ActivitySubscribe> T useSubscriber(Class<T> subscriber);
 
     <T extends ActivitySubscribe> T useSubscriber(T subscriber);
+
+    IntentDelegate intent();
 }

@@ -15,9 +15,9 @@ public interface ActivityManager {
 
     ActivityDelegate target(Activity activity);
 
-    ActivityBuilder build();
+    IntentDelegate build();
 
-    ActivityBuilder build(Class<? extends Activity> target);
+    IntentDelegate build(Class<? extends Activity> target);
 
-    ActivityBuilder build(Intent intent);
+    IntentDelegate build(Intent intent);
 }
