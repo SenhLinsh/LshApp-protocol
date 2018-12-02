@@ -2,12 +2,12 @@ package com.linsh.protocol.ui;
 
 import android.app.Activity;
 import android.content.Context;
-import android.view.ViewManager;
 
 import com.linsh.protocol.ui.dialog.DialogManager;
 import com.linsh.protocol.ui.layout.LayoutManager;
 import com.linsh.protocol.ui.popup.PopupWindowManager;
 import com.linsh.protocol.ui.toast.ToastManager;
+import com.linsh.protocol.ui.view.ViewManager;
 import com.linsh.protocol.ui.widget.WidgetManager;
 import com.linsh.protocol.ui.window.WindowManager;
 
