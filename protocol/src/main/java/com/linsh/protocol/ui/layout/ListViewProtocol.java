@@ -21,8 +21,6 @@ public interface ListViewProtocol<T> extends DataSetViewProtocol<T> {
     @Override
     RecyclerView getView();
 
-    RecyclerView.Adapter getAdapter();
-
     List<T> getData();
 
     T getSingleData();
@@ -74,7 +72,7 @@ public interface ListViewProtocol<T> extends DataSetViewProtocol<T> {
 
     ListViewProtocol<T> setDivider(int gap, int color);
 
-    ListViewProtocol<T> setOnItemClickListener(OnItemClickListener listener);
+    ListViewProtocol<T> setOnItemClickListener(OnItemClickListener<T> listener);
 
-    ListViewProtocol<T> setOnItemLongClickListener(OnItemLongClickListener listener);
+    ListViewProtocol<T> setOnItemLongClickListener(OnItemLongClickListener<T> listener);
 }
