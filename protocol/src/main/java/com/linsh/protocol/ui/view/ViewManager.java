@@ -17,7 +17,11 @@ public interface ViewManager {
 
     <V extends ViewProtocol> V protocol(Activity activity, Class<V> protocol);
 
+    <V extends ViewProtocol> V protocol(Activity activity, Class<V> protocol, String key);
+
     <V extends ViewProtocol> V protocol(View view, Class<V> protocol);
+
+    <V extends ViewProtocol> V protocol(View view, Class<V> protocol, String key);
 
     <V extends View> ViewProtocol<V> view(V view);
 
