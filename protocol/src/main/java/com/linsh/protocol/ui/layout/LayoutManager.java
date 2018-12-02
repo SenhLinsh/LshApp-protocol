@@ -1,6 +1,6 @@
 package com.linsh.protocol.ui.layout;
 
-import com.linsh.protocol.Type;
+import java.util.List;
 
 /**
  * <pre>
@@ -12,7 +12,11 @@ import com.linsh.protocol.Type;
  */
 public interface LayoutManager {
 
-    <T> ListViewHelper<T> list(Type<T> typeOfData);
+    <T> ListViewProtocol<T> list();
 
-    <T> TabLayoutHelper<T> tab(Type<T> typeOfData);
+    <T> ListViewProtocol<T> list(List<T> data);
+
+    <T> ListViewProtocol<T> list(T[] data);
+
+    <T> ListViewProtocol<T> list(T data);
 }

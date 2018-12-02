@@ -2,7 +2,7 @@ package com.linsh.protocol.ui.window;
 
 import android.view.View;
 
-import com.linsh.protocol.ui.view.ViewHelper;
+import com.linsh.protocol.ui.view.ViewProtocol;
 
 /**
  * <pre>
@@ -12,7 +12,7 @@ import com.linsh.protocol.ui.view.ViewHelper;
  *    desc   :
  * </pre>
  */
-public interface WindowViewHelper extends ViewHelper {
+public interface WindowViewHelper extends ViewProtocol {
 
     View getView();
 

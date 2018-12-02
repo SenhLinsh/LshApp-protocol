@@ -8,5 +8,6 @@ package com.linsh.protocol.ui.layout;
  * </pre>
  */
 public interface ItemCounter {
+
     int getItemCount();
 }

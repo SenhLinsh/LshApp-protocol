@@ -76,11 +76,7 @@ public interface IntentDelegate {
 
     <T> T getJsonExtra(Class<T> classOfT);
 
-    <T> T getJsonExtra(Class<T> classOfT, int index);
-
     IntentDelegate putExtra(String key, Object value);
-
-    <T> T getExtra(String key);
 
     IntentDelegate setData(Uri data);
 

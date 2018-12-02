@@ -10,8 +10,6 @@ package com.linsh.protocol.value;
  */
 public interface ValueManager {
 
-    Types.Builder types();
-
     ColorCreator color();
 
     TextSizeCreator textSize();

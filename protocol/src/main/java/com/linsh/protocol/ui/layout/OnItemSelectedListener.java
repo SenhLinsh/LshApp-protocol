@@ -1,5 +1,7 @@
 package com.linsh.protocol.ui.layout;
 
+import com.linsh.protocol.ui.view.ViewProtocol;
+
 /**
  * <pre>
  *    author : Senh Linsh
@@ -8,8 +10,8 @@ package com.linsh.protocol.ui.layout;
  *    desc   :
  * </pre>
  */
-public interface OnItemSelectedListener<V extends ItemViewHelper> {
+public interface OnItemSelectedListener<T> {
 
-    void onItemSelected(V viewHelper, int index);
+    void onItemSelected(DataSetViewProtocol<T> dataSet, ViewProtocol itemView, int index);
 
 }

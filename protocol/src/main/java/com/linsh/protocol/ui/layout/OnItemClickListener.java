@@ -1,6 +1,15 @@
 package com.linsh.protocol.ui.layout;
 
-public interface OnItemClickListener {
+import com.linsh.protocol.ui.view.ViewProtocol;
 
-    void onItemClick(ItemViewHelper helper, int position);
+/**
+ * <pre>
+ *    author : Senh Linsh
+ *    github : https://github.com/SenhLinsh
+ *    date   : 2018/12/02
+ *    desc   :
+ * </pre>
+ */
+public interface OnItemClickListener<T> {
+    void onItemClick(DataSetViewProtocol<T> dataSet, ViewProtocol itemView, int position);
 }

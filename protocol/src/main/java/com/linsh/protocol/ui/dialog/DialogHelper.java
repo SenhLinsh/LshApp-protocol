@@ -3,7 +3,7 @@ package com.linsh.protocol.ui.dialog;
 import android.app.Dialog;
 
 import com.linsh.protocol.ui.OnClickListener;
-import com.linsh.protocol.ui.view.ViewHelper;
+import com.linsh.protocol.ui.view.ViewProtocol;
 
 /**
  * <pre>
@@ -35,5 +35,5 @@ public interface DialogHelper<T extends DialogHelper> {
 
     Dialog build();
 
-    ViewHelper getContentView();
+    ViewProtocol getContentView();
 }

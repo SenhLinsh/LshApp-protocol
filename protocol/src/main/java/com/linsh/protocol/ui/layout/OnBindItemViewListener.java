@@ -10,8 +10,6 @@ import com.linsh.protocol.ui.view.ViewProtocol;
  *    desc   :
  * </pre>
  */
-public interface OnItemLongClickListener<T> {
-
-    void onItemLongClick(DataSetViewProtocol<T> dataSet, ViewProtocol itemView, int index);
-
+public interface OnBindItemViewListener<T, V extends ViewProtocol> {
+    void onBindItemView(DataSetViewProtocol<T> dataSet, V itemView, int position);
 }

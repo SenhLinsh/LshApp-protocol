@@ -3,7 +3,7 @@ package com.linsh.protocol.ui.popup;
 import android.view.View;
 import android.widget.PopupWindow;
 
-import com.linsh.protocol.ui.view.ViewHelper;
+import com.linsh.protocol.ui.view.ViewProtocol;
 import com.linsh.protocol.ui.window.WindowViewHelper;
 
 /**
@@ -22,7 +22,7 @@ public interface PopupWindowManager {
 
     PopupWindowManager setView(View view);
 
-    PopupWindowManager setView(ViewHelper viewHelper);
+    PopupWindowManager setView(ViewProtocol viewHelper);
 
     PopupWindowManager setView(WindowViewHelper helper);
 

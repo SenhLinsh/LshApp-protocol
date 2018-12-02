@@ -1,6 +1,6 @@
 package com.linsh.protocol.ui.view;
 
-import android.view.ViewGroup;
+import android.view.View;
 
 /**
  * <pre>
@@ -10,6 +10,6 @@ import android.view.ViewGroup;
  *    desc   :
  * </pre>
  */
-public interface ViewGroupHelper<T extends ViewGroupHelper, V extends ViewGroup> extends ViewHelper<T, V>, ViewGroupProxy<T, V> {
-
+public interface ViewProtocol<T extends View> {
+    T getView();
 }
