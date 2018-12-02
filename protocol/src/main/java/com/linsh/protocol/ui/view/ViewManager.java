@@ -15,9 +15,9 @@ import android.view.ViewGroup;
  */
 public interface ViewManager {
 
-    <V extends ViewProtocol> V impl(Activity activity, Class<V> protocol);
+    <V extends ViewProtocol> V protocol(Activity activity, Class<V> protocol);
 
-    <V extends ViewProtocol> V impl(View view, Class<V> protocol);
+    <V extends ViewProtocol> V protocol(View view, Class<V> protocol);
 
     <V extends View> ViewProtocol<V> view(V view);
 

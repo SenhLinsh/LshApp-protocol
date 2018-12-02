@@ -1,5 +1,7 @@
 package com.linsh.protocol.activity;
 
+import com.linsh.protocol.ui.view.ViewProtocol;
+
 /**
  * <pre>
  *    author : Senh Linsh
@@ -25,4 +27,6 @@ public interface ActivityDelegate {
     <T extends ActivitySubscribe> T useSubscriber(T subscriber);
 
     IntentDelegate intent();
+
+    <V extends ViewProtocol> V viewProtocol(Class<V> protocol);
 }
