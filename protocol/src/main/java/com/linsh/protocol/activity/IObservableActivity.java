@@ -11,8 +11,6 @@ package com.linsh.protocol.activity;
  */
 public interface IObservableActivity {
 
-    <T extends ActivitySubscribe> T subscribe(String classOfSubscriber);
-
     <T extends ActivitySubscribe> T subscribe(Class<T> classOfSubscriber);
 
     <T extends ActivitySubscribe> T subscribe(T subscriber);
