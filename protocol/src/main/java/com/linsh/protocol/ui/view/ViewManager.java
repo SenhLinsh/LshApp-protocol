@@ -42,4 +42,8 @@ public interface ViewManager {
     ViewProtocol inflate(String layoutName, ViewGroup parent);
 
     ViewProtocol inflate(String layoutName, ViewGroup parent, boolean attach);
+
+    View findViewById(Activity activity, String id);
+
+    View findViewById(View view, String id);
 }
