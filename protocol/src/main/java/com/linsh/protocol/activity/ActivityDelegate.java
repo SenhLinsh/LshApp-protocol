@@ -28,5 +28,7 @@ public interface ActivityDelegate {
 
     IntentDelegate intent();
 
-    <V extends ViewProtocol> V viewProtocol(Class<V> protocol);
+    <V extends ViewProtocol> V findViewProtocol(Class<V> protocol);
+
+    <V extends ViewProtocol> V findViewProtocol(Class<V> protocol, String key);
 }
