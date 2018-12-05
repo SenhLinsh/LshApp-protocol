@@ -27,6 +27,10 @@ public interface ViewManager {
 
     <V extends ViewProtocol> V getProtocol(Class<V> protocol, String key);
 
+    <T extends ViewProtocol> ViewManager registerProtocol(Class<T> protocol, Class<? extends T> protocolImpl);
+
+    <T extends ViewProtocol> ViewManager unregisterProtocol(Class<T> protocol, Class<? extends T> protocolImpl);
+
     <V extends View> ViewProtocol<V> view(V view);
 
     ViewProtocol inflate(int layout, Context context);
