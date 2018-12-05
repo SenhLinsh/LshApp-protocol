@@ -2,6 +2,8 @@ package com.linsh.protocol.file;
 
 import android.app.Activity;
 
+import java.io.File;
+
 /**
  * <pre>
  *    author : Senh Linsh
@@ -11,6 +13,8 @@ import android.app.Activity;
  * </pre>
  */
 public interface FileManager {
+
+    FileBuilder file(File file);
 
     FileBuilder path(String path);
 

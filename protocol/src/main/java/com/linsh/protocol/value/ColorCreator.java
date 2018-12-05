@@ -10,6 +10,8 @@ package com.linsh.protocol.value;
  */
 public interface ColorCreator {
 
+    int color(String name);
+
     int main();
 
     int mainLight();
@@ -26,11 +28,19 @@ public interface ColorCreator {
 
     int title();
 
+    int title(int bgColor);
+
     int subtitle();
+
+    int subtitle(int bgColor);
 
     int text();
 
+    int text(int bgColor);
+
     int subtext();
+
+    int subtext(int bgColor);
 
     int disabled();
 
