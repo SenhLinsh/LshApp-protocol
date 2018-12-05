@@ -50,25 +50,25 @@ public interface ListViewProtocol<T> extends DataSetViewProtocol<T> {
     ListViewProtocol<T> setCounter(ItemCounter counter);
 
     @Override
-    <V extends ViewProtocol> ListViewProtocol<T> addItemView(Class<V> itemHelper);
+    <V extends ViewProtocol> ListViewProtocol<T> addItemView(Class<V> itemProtocol);
 
     @Override
-    <V extends ViewProtocol> ListViewProtocol<T> addItemView(Class<V> itemHelper, OnBindItemViewListener<T, V> listener);
+    <V extends ViewProtocol> ListViewProtocol<T> addItemView(Class<V> itemProtocol, OnBindItemViewListener<T, V> listener);
 
     @Override
-    <V extends ViewProtocol> ListViewProtocol<T> addItemView(Class<V> itemHelper, OnBindItemViewListener<T, V> listener, BiFunction<ListViewProtocol<T>, Integer, Boolean> filter);
+    <V extends ViewProtocol> ListViewProtocol<T> addItemView(Class<V> itemProtocol, OnBindItemViewListener<T, V> listener, BiFunction<ListViewProtocol<T>, Integer, Boolean> filter);
 
-    <V extends ViewProtocol> ListViewProtocol<T> addHeader(Class<V> itemHelper);
+    <V extends ViewProtocol> ListViewProtocol<T> addHeader(Class<V> itemProtocol);
 
-    <V extends ViewProtocol> ListViewProtocol<T> addHeader(Class<V> itemHelper, OnBindItemViewListener<T, V> listener);
+    <V extends ViewProtocol> ListViewProtocol<T> addHeader(Class<V> itemProtocol, OnBindItemViewListener<T, V> listener);
 
-    <V extends ViewProtocol> ListViewProtocol<T> addFooter(Class<V> itemHelper);
+    <V extends ViewProtocol> ListViewProtocol<T> addFooter(Class<V> itemProtocol);
 
-    <V extends ViewProtocol> ListViewProtocol<T> addFooter(Class<V> itemHelper, OnBindItemViewListener<T, V> listener);
+    <V extends ViewProtocol> ListViewProtocol<T> addFooter(Class<V> itemProtocol, OnBindItemViewListener<T, V> listener);
 
-    <V extends ViewProtocol> ListViewProtocol<T> setDivider(Class<V> itemHelper);
+    <V extends ViewProtocol> ListViewProtocol<T> setDivider(Class<V> itemProtocol);
 
-    <V extends ViewProtocol> ListViewProtocol<T> setDivider(Class<V> itemHelper, OnBindItemViewListener<T, V> listener);
+    <V extends ViewProtocol> ListViewProtocol<T> setDivider(Class<V> itemProtocol, OnBindItemViewListener<T, V> listener);
 
     ListViewProtocol<T> setDivider(int gap, int color);
 

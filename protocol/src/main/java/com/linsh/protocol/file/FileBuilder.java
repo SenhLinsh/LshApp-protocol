@@ -16,11 +16,19 @@ public interface FileBuilder {
 
     FileBuilder parent(String name);
 
+    FileBuilder child(String name);
+
     FileBuilder external(boolean external);
 
     FileBuilder external(boolean external, boolean force);
 
+    FileBuilder makeDirs();
+
+    FileBuilder makeParentDirs();
+
     File file();
+
+    File[] listFiles();
 
     FileReader read();
 
