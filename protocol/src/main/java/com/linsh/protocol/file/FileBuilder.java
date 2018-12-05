@@ -1,6 +1,7 @@
 package com.linsh.protocol.file;
 
-import com.linsh.protocol.Callback;
+import com.linsh.protocol.Result;
+import com.linsh.protocol.Task;
 
 import java.io.File;
 
@@ -36,5 +37,5 @@ public interface FileBuilder {
 
     boolean delete();
 
-    void deleteAll(Callback<File> callback);
+    Task<Result> deleteAll();
 }
