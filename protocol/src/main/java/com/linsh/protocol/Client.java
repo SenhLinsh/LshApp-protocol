@@ -8,6 +8,7 @@ import com.linsh.protocol.config.ImageConfig;
 import com.linsh.protocol.config.LogConfig;
 import com.linsh.protocol.config.ThreadConfig;
 import com.linsh.protocol.config.UIConfig;
+import com.linsh.protocol.config.ValueConfig;
 import com.linsh.protocol.db.DbManager;
 import com.linsh.protocol.file.FileManager;
 import com.linsh.protocol.http.HttpManager;
@@ -44,15 +45,13 @@ import com.linsh.protocol.value.ValueManager;
 public class Client {
 
     private static ManagerFactory factory;
-    private static Config config;
 
-    static void init(ManagerFactory factory, Config config) {
+    static void init(ManagerFactory factory) {
         Client.factory = factory;
-        Client.config = config;
     }
 
     public static Config config() {
-        return config;
+        return factory.config();
     }
 
     public static ActivityManager activity() {
@@ -117,5 +116,9 @@ public class Client {
 
     public static ValueManager value() {
         return factory.value();
+    }
+
+    public static ValueManager value(ValueConfig config) {
+        return factory.value(config);
     }
 }

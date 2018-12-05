@@ -8,6 +8,7 @@ import com.linsh.protocol.config.ImageConfig;
 import com.linsh.protocol.config.LogConfig;
 import com.linsh.protocol.config.ThreadConfig;
 import com.linsh.protocol.config.UIConfig;
+import com.linsh.protocol.config.ValueConfig;
 import com.linsh.protocol.db.DbManager;
 import com.linsh.protocol.file.FileManager;
 import com.linsh.protocol.http.HttpManager;
@@ -26,6 +27,8 @@ import com.linsh.protocol.value.ValueManager;
  * </pre>
  */
 public interface ManagerFactory {
+
+    Config config();
 
     ActivityManager activity();
 
@@ -58,4 +61,6 @@ public interface ManagerFactory {
     UIManager ui(UIConfig config);
 
     ValueManager value();
+
+    ValueManager value(ValueConfig config);
 }
