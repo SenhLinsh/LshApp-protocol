@@ -15,6 +15,8 @@ import android.view.ViewGroup;
  */
 public interface ViewManager {
 
+    <V extends View> ViewProtocol<V> view(V view);
+
     <V extends ViewProtocol> V findProtocol(Activity activity, Class<V> protocol);
 
     <V extends ViewProtocol> V findProtocol(Activity activity, Class<V> protocol, String key);
@@ -23,19 +25,21 @@ public interface ViewManager {
 
     <V extends ViewProtocol> V findProtocol(View view, Class<V> protocol, String key);
 
-    <V extends ViewProtocol> V getProtocol(Class<V> protocol);
+    <V extends ViewProtocol> V getProtocol(Context context, Class<V> protocol);
 
-    <V extends ViewProtocol> V getProtocol(Class<V> protocol, String key);
+    <V extends ViewProtocol> V getProtocol(Context context, Class<V> protocol, String key);
+
+    <V extends ViewProtocol> V getProtocol(ViewGroup parent, Class<V> protocol, boolean attachToRoot);
+
+    <V extends ViewProtocol> V getProtocol(ViewGroup parent, Class<V> protocol, String key, boolean attachToRoot);
 
     <T extends ViewProtocol> ViewManager registerProtocol(Class<T> protocol, Class<? extends T> protocolImpl);
 
     <T extends ViewProtocol> ViewManager unregisterProtocol(Class<T> protocol, Class<? extends T> protocolImpl);
 
-    <V extends View> ViewProtocol<V> view(V view);
+    ViewProtocol inflate(String layoutName, Context context);
 
-    ViewProtocol inflate(int layout, Context context);
+    ViewProtocol inflate(String layoutName, ViewGroup parent);
 
-    ViewProtocol inflate(int layout, ViewGroup parent);
-
-    ViewProtocol inflate(int layout, ViewGroup parent, boolean attach);
+    ViewProtocol inflate(String layoutName, ViewGroup parent, boolean attach);
 }
