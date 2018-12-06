@@ -10,6 +10,6 @@ import android.view.View;
  *    desc   :
  * </pre>
  */
-public interface ViewProtocol<T extends View> {
-    T getView();
+public interface ViewProtocol {
+    View getView();
 }

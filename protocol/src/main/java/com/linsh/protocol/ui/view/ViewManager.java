@@ -15,8 +15,6 @@ import android.view.ViewGroup;
  */
 public interface ViewManager {
 
-    <V extends View> ViewProtocol<V> view(V view);
-
     <V extends ViewProtocol> V findProtocol(Activity activity, Class<V> protocol);
 
     <V extends ViewProtocol> V findProtocol(Activity activity, Class<V> protocol, String key);
@@ -37,11 +35,11 @@ public interface ViewManager {
 
     <T extends ViewProtocol> ViewManager unregisterProtocol(Class<T> protocol, Class<? extends T> protocolImpl);
 
-    ViewProtocol inflate(String layoutName, Context context);
+    View inflate(String layoutName, Context context);
 
-    ViewProtocol inflate(String layoutName, ViewGroup parent);
+    View inflate(String layoutName, ViewGroup parent);
 
-    ViewProtocol inflate(String layoutName, ViewGroup parent, boolean attach);
+    View inflate(String layoutName, ViewGroup parent, boolean attach);
 
     View findViewById(Activity activity, String id);
 

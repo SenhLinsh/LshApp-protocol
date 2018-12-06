@@ -1,7 +1,5 @@
 package com.linsh.protocol.ui.window;
 
-import android.view.View;
-
 import com.linsh.protocol.ui.view.ViewProtocol;
 
 /**
@@ -13,8 +11,6 @@ import com.linsh.protocol.ui.view.ViewProtocol;
  * </pre>
  */
 public interface WindowViewHelper extends ViewProtocol {
-
-    View getView();
 
     void setLocation(int x, int y);
 

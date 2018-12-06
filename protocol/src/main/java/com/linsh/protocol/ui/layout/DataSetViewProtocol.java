@@ -1,7 +1,5 @@
 package com.linsh.protocol.ui.layout;
 
-import android.view.View;
-
 import com.linsh.protocol.ui.view.ViewProtocol;
 
 import java.util.List;
@@ -16,7 +14,7 @@ import io.reactivex.functions.BiFunction;
  *    desc   :
  * </pre>
  */
-public interface DataSetViewProtocol<T> extends ViewProtocol<View> {
+public interface DataSetViewProtocol<T> extends ViewProtocol {
 
     List<T> getData();
 
