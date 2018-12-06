@@ -31,10 +31,6 @@ public interface ViewManager {
 
     <V extends ViewProtocol> V getProtocol(ViewGroup parent, Class<V> protocol, String key, boolean attachToRoot);
 
-    <T extends ViewProtocol> ViewManager registerProtocol(Class<T> protocol, Class<? extends T> protocolImpl);
-
-    <T extends ViewProtocol> ViewManager unregisterProtocol(Class<T> protocol, Class<? extends T> protocolImpl);
-
     View inflate(String layoutName, Context context);
 
     View inflate(String layoutName, ViewGroup parent);
@@ -44,4 +40,6 @@ public interface ViewManager {
     View findViewById(Activity activity, String id);
 
     View findViewById(View view, String id);
+
+    Register register();
 }
