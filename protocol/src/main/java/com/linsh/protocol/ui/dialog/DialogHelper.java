@@ -1,9 +1,9 @@
 package com.linsh.protocol.ui.dialog;
 
 import android.app.Dialog;
+import android.view.View;
 
 import com.linsh.protocol.ui.OnClickListener;
-import com.linsh.protocol.ui.view.ViewProtocol;
 
 /**
  * <pre>
@@ -35,5 +35,5 @@ public interface DialogHelper<T extends DialogHelper> {
 
     Dialog build();
 
-    ViewProtocol getContentView();
+    View getContentView();
 }
