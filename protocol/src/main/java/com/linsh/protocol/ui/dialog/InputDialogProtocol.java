@@ -8,11 +8,11 @@ package com.linsh.protocol.ui.dialog;
  *    desc   :
  * </pre>
  */
-public interface InputDialogHelper extends DialogHelper<InputDialogHelper> {
+public interface InputDialogProtocol extends BaseDialogProtocol<InputDialogProtocol> {
 
-    InputDialogHelper hint(CharSequence hint);
+    InputDialogProtocol hint(CharSequence hint);
 
-    InputDialogHelper content(CharSequence content);
+    InputDialogProtocol content(CharSequence content);
 
     CharSequence getHint();
 

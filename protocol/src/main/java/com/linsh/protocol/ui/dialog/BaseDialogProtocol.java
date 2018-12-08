@@ -1,6 +1,5 @@
 package com.linsh.protocol.ui.dialog;
 
-import android.app.Dialog;
 import android.view.View;
 
 import com.linsh.protocol.ui.OnClickListener;
@@ -13,7 +12,7 @@ import com.linsh.protocol.ui.OnClickListener;
  *    desc   :
  * </pre>
  */
-public interface DialogHelper<T extends DialogHelper> {
+public interface BaseDialogProtocol<T extends BaseDialogProtocol> extends DialogProtocol {
 
     T title(CharSequence title);
 
@@ -32,8 +31,6 @@ public interface DialogHelper<T extends DialogHelper> {
     T show();
 
     T dismiss();
-
-    Dialog build();
 
     View getContentView();
 }

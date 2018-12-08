@@ -11,11 +11,11 @@ import android.view.View;
  *    desc   :
  * </pre>
  */
-public interface CustomDialogHelper extends DialogHelper<CustomDialogHelper> {
+public interface CustomDialogProtocol extends BaseDialogProtocol<CustomDialogProtocol> {
 
-    CustomDialogHelper setView(View view);
+    CustomDialogProtocol setView(View view);
 
-    CustomDialogHelper setView(@LayoutRes int layout);
+    CustomDialogProtocol setView(@LayoutRes int layout);
 
     View getView();
 }

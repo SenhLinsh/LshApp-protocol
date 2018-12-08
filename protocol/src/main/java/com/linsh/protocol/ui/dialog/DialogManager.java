@@ -15,29 +15,29 @@ import java.util.List;
  */
 public interface DialogManager {
 
-    LoadingDialogHelper loading();
+    LoadingDialogProtocol loading();
 
-    LoadingDialogHelper loading(CharSequence content);
+    LoadingDialogProtocol loading(CharSequence content);
 
-    TextDialogHelper text();
+    TextDialogProtocol text();
 
-    TextDialogHelper text(CharSequence content);
+    TextDialogProtocol text(CharSequence content);
 
-    InputDialogHelper input();
+    InputDialogProtocol input();
 
-    InputDialogHelper input(CharSequence content);
+    InputDialogProtocol input(CharSequence content);
 
-    ListDialogHelper list();
+    ListDialogProtocol list();
 
-    ListDialogHelper list(CharSequence[] items);
+    ListDialogProtocol list(CharSequence[] items);
 
-    ListDialogHelper list(List<? extends CharSequence> items);
+    ListDialogProtocol list(List<? extends CharSequence> items);
 
-    CustomDialogHelper custom();
+    CustomDialogProtocol custom();
 
-    CustomDialogHelper custom(View view);
+    CustomDialogProtocol custom(View view);
 
-    CustomDialogHelper custom(@LayoutRes int layout);
+    CustomDialogProtocol custom(@LayoutRes int layout);
 
     void dismiss();
 }

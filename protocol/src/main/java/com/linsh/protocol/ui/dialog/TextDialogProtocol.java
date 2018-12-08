@@ -8,9 +8,9 @@ package com.linsh.protocol.ui.dialog;
  *    desc   :
  * </pre>
  */
-public interface TextDialogHelper extends DialogHelper<TextDialogHelper> {
+public interface TextDialogProtocol extends BaseDialogProtocol<TextDialogProtocol> {
 
-    TextDialogHelper content(CharSequence content);
+    TextDialogProtocol content(CharSequence content);
 
     CharSequence getContent();
 }
