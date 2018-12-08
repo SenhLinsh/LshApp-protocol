@@ -37,9 +37,9 @@ public interface ViewManager {
 
     View inflate(String layoutName, ViewGroup parent, boolean attach);
 
-    View findViewById(Activity activity, String id);
+    <T extends View> T findViewById(Activity activity, String id);
 
-    View findViewById(View view, String id);
+    <T extends View> T findViewById(View view, String id);
 
     Register register();
 }
